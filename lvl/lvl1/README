@@ -1,0 +1,27 @@
+COSMIC Freedom License OBHPC - UVSQ 2020
+
+# Info
+
+0x00.
+
+Warning: Change the value of _CPU_FREQ_ in the makefile (-D_CPU_FREQ_=3.8) with the target CPU frequency in GHz.
+
+0x01.
+
+Warning: Remove the Intel compiler line from the Makefile if ou do not have the suite installed.
+
+# Compilation
+
+  $make
+
+# Running
+
+  $./run.sh gmm_bench_mkl
+
+  or
+
+  $./run.sh gmm_bench_blas
+
+
+After the runs are finished, you should find a config directory containing files with detailed information about the
+CPU and cache configurations. Also, a directory with the performance data, the GNUPlot script, and a comparison plot. 

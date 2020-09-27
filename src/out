@@ -1,0 +1,488 @@
+.:
+total 128
+drwxr-xr-x 3 root root 4096 May 24 15:22 aes
+drwxr-xr-x 3 root root 4096 May 24 15:22 aes128_intel
+drwxr-xr-x 2 root root 4096 May 24 15:22 bitwise
+drwxr-xr-x 2 root root 4096 May 24 15:22 butterfly
+drwxr-xr-x 3 root root 4096 May 24 15:22 cholesky
+drwxr-xr-x 2 root root 4096 Jul 19 20:47 collatz
+drwxr-xr-x 3 root root 4096 Jul 19 20:46 conjgrad
+drwxr-xr-x 2 root root 4096 May 24 15:22 delta
+drwxr-xr-x 2 root root 4096 Sep 27 23:17 diffusion
+drwxr-xr-x 3 root root 4096 Sep 27 23:17 filter
+drwxr-xr-x 2 root root 4096 May 24 15:22 filter_cv
+drwxr-xr-x 3 root root 4096 May 24 15:22 fp
+drwxr-xr-x 2 root root 4096 May 24 15:22 hamming
+drwxr-xr-x 2 root root 4096 May 24 15:22 ikeda
+drwxr-xr-x 2 root root 4096 May 24 15:22 integ
+drwxr-xr-x 3 root root 4096 May 24 15:22 jacobi
+drwxr-xr-x 3 root root 4096 Sep 27 23:18 lookup
+drwxr-xr-x 6 root root 4096 May 24 15:22 m
+drwxr-xr-x 2 root root 4096 Sep 27 23:19 nbody
+drwxr-xr-x 2 root root 4096 Sep 18 00:30 newraph
+-rw-r--r-- 1 root root    0 Sep 27 23:25 out
+drwxr-xr-x 2 root root 4096 May 24 15:22 pendulum
+drwxr-xr-x 3 root root 4096 May 24 15:22 pgm_hist
+drwxr-xr-x 3 root root 4096 Jul 24 00:35 ppm
+drwxr-xr-x 2 root root 4096 May 24 15:22 primes
+drwxr-xr-x 2 root root 4096 May 24 15:22 raycast
+drwxr-xr-x 3 root root 4096 May 24 15:22 rsa
+drwxr-xr-x 2 root root 4096 May 24 15:22 sqrt
+drwxr-xr-x 3 root root 4096 May 24 15:22 steer
+drwxr-xr-x 3 root root 4096 May 24 15:22 stegano
+drwxr-xr-x 2 root root 4096 Sep 18 00:31 taylor
+drwxr-xr-x 2 root root 4096 May 24 15:22 vizfour
+drwxr-xr-x 2 root root 4096 May 24 15:22 xorencrypt
+
+./aes:
+total 36
+-rw-r--r-- 1 root root 25403 May 24 15:22 aes.c
+-rw-r--r-- 1 root root   109 May 24 15:22 Makefile
+drwxr-xr-x 2 root root  4096 May 24 15:22 test
+
+./aes/test:
+total 29232
+-rw-r--r-- 1 root root   417615 May 24 15:22 10.ppm
+-rw-r--r-- 1 root root 20796197 May 24 15:22 4.ppm
+-rw-r--r-- 1 root root  8709070 May 24 15:22 big.txt
+-rw-r--r-- 1 root root      139 May 24 15:22 in.txt
+
+./aes128_intel:
+total 12
+-rw-r--r-- 1 root root 2862 May 24 15:22 aes128ni.h
+-rw-r--r-- 1 root root  245 May 24 15:22 Makefile
+drwxr-xr-x 2 root root 4096 May 24 15:22 tests
+
+./aes128_intel/tests:
+total 4
+-rw-r--r-- 1 root root 1237 May 24 15:22 tests.c
+
+./bitwise:
+total 20
+-rw-r--r-- 1 root root 7680 May 24 15:22 bitwise.c
+-rw-r--r-- 1 root root  449 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  326 May 24 15:22 rdtsc.h
+-rwxr-xr-x 1 root root  557 May 24 15:22 runtest.sh
+
+./butterfly:
+total 24
+-rw-r--r-- 1 root root 1966 May 24 15:22 butterfly.c
+-rw-r--r-- 1 root root 4119 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root   95 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  104 May 24 15:22 pi.h
+
+./cholesky:
+total 12
+-rw-r--r-- 1 root root 2700 May 24 15:22 cholesky.c
+-rw-r--r-- 1 root root  156 May 24 15:22 Makefile
+drwxr-xr-x 2 root root 4096 May 24 15:22 test
+
+./cholesky/test:
+total 28
+-rw-r--r-- 1 root root  66 May 24 15:22 A.txt
+-rw-r--r-- 1 root root  97 May 24 15:22 B.txt
+-rw-r--r-- 1 root root  52 May 24 15:22 C.txt
+-rw-r--r-- 1 root root  33 May 24 15:22 D.txt
+-rw-r--r-- 1 root root  89 May 24 15:22 L_A.txt
+-rw-r--r-- 1 root root 153 May 24 15:22 L_B.txt
+-rw-r--r-- 1 root root  89 May 24 15:22 L_C.txt
+
+./collatz:
+total 12
+-rw-r--r-- 1 root root 3430 May 24 15:22 collatz.c
+-rw-r--r-- 1 root root  115 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  153 May 24 15:22 rdtsc.h
+
+./conjgrad:
+total 16
+-rw-r--r-- 1 root root 4535 May 24 15:22 conjgrad.c
+-rw-r--r-- 1 root root  156 May 24 15:22 Makefile
+drwxr-xr-x 2 root root 4096 May 24 15:22 test
+
+./conjgrad/test:
+total 24
+-rw-r--r-- 1 root root 77 May 24 15:22 A.txt
+-rw-r--r-- 1 root root 22 May 24 15:22 b_A.txt
+-rw-r--r-- 1 root root 10 May 24 15:22 b_B.txt
+-rw-r--r-- 1 root root 20 May 24 15:22 B.txt
+-rw-r--r-- 1 root root 20 May 24 15:22 s_A.txt
+-rw-r--r-- 1 root root 21 May 24 15:22 s_b.txt
+
+./delta:
+total 28
+-rw-r--r-- 1 root root 7605 May 24 15:22 delta.c
+-rw-r--r-- 1 root root 4119 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root   83 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  126 May 24 15:22 pi.h
+
+./diffusion:
+total 232
+-rw-r--r-- 1 root root  90112 May 24 15:22 data
+-rw-r--r-- 1 root root 118258 Sep 18 16:05 diff.asm
+-rw-r--r-- 1 root root   4562 May 24 15:22 diffusion.c
+-rw-r--r-- 1 root root   4119 May 24 15:22 flame.c
+-rw-r--r-- 1 root root    832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root    290 May 24 15:22 Makefile
+-rw-r--r-- 1 root root    160 May 24 15:22 rdtsc.h
+
+./filter:
+total 624
+-rw-r--r-- 1 root root   7329 May 24 15:22 filter.c
+-rw-r--r-- 1 root root 307215 Sep 17 23:52 in.ppm
+-rw-r--r-- 1 root root    122 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 307215 Sep 17 23:53 out.ppm
+drwxr-xr-x 4 root root   4096 May 24 15:22 test
+
+./filter/test:
+total 8
+drwxr-xr-x 2 root root 4096 May 24 15:22 in
+drwxr-xr-x 8 root root 4096 May 24 15:22 out
+
+./filter/test/in:
+total 12032
+-rw-r--r-- 1 root root  139215 May 24 15:22 10.pgm
+-rw-r--r-- 1 root root  172815 May 24 15:22 11.pgm
+-rw-r--r-- 1 root root  921616 May 24 15:22 12.pgm
+-rw-r--r-- 1 root root  206515 May 24 15:22 13.pgm
+-rw-r--r-- 1 root root  400515 May 24 15:22 1.pgm
+-rw-r--r-- 1 root root  307215 May 24 15:22 2.pgm
+-rw-r--r-- 1 root root 6932077 May 24 15:22 3.pgm
+-rw-r--r-- 1 root root  960016 May 24 15:22 4.pgm
+-rw-r--r-- 1 root root  307215 May 24 15:22 5.pgm
+-rw-r--r-- 1 root root  477615 May 24 15:22 6.pgm
+-rw-r--r-- 1 root root  462585 May 24 15:22 7.pgm
+-rw-r--r-- 1 root root  212805 May 24 15:22 8.pgm
+-rw-r--r-- 1 root root  791136 May 24 15:22 9.pgm
+
+./filter/test/out:
+total 24
+drwxr-xr-x 2 root root 4096 May 24 15:22 edge1
+drwxr-xr-x 2 root root 4096 May 24 15:22 edge2
+drwxr-xr-x 2 root root 4096 May 24 15:22 edge3
+drwxr-xr-x 2 root root 4096 May 24 15:22 kirsch
+drwxr-xr-x 2 root root 4096 May 24 15:22 prewitt
+drwxr-xr-x 2 root root 4096 May 24 15:22 sobel
+
+./filter/test/out/edge1:
+total 1216
+-rw-r--r-- 1 root root 139215 May 24 15:22 o10.pgm
+-rw-r--r-- 1 root root 172815 May 24 15:22 o11.pgm
+-rw-r--r-- 1 root root 921616 May 24 15:22 o12.pgm
+-rw-r--r-- 1 root root 206515 May 24 15:22 o13.pgm
+-rw-r--r-- 1 root root 212805 May 24 15:22 o8.pgm
+-rw-r--r-- 1 root root 791136 May 24 15:22 o9.pgm
+
+./filter/test/out/edge2:
+total 1328
+-rw-r--r-- 1 root root 139215 May 24 15:22 o10.pgm
+-rw-r--r-- 1 root root 172815 May 24 15:22 o11.pgm
+-rw-r--r-- 1 root root 921616 May 24 15:22 o12.pgm
+-rw-r--r-- 1 root root 206515 May 24 15:22 o13.pgm
+-rw-r--r-- 1 root root 212805 May 24 15:22 o8.pgm
+-rw-r--r-- 1 root root 791136 May 24 15:22 o9.pgm
+
+./filter/test/out/edge3:
+total 1456
+-rw-r--r-- 1 root root 139215 May 24 15:22 o10.pgm
+-rw-r--r-- 1 root root 172815 May 24 15:22 o11.pgm
+-rw-r--r-- 1 root root 921616 May 24 15:22 o12.pgm
+-rw-r--r-- 1 root root 206515 May 24 15:22 o13.pgm
+-rw-r--r-- 1 root root 212805 May 24 15:22 o8.pgm
+-rw-r--r-- 1 root root 791136 May 24 15:22 o9.pgm
+
+./filter/test/out/kirsch:
+total 2400
+-rw-r--r-- 1 root root 139215 May 24 15:22 o10.pgm
+-rw-r--r-- 1 root root 172815 May 24 15:22 o11.pgm
+-rw-r--r-- 1 root root 921616 May 24 15:22 o12.pgm
+-rw-r--r-- 1 root root 206515 May 24 15:22 o13.pgm
+-rw-r--r-- 1 root root 212805 May 24 15:22 o8.pgm
+-rw-r--r-- 1 root root 791136 May 24 15:22 o9.pgm
+
+./filter/test/out/prewitt:
+total 2400
+-rw-r--r-- 1 root root 139215 May 24 15:22 o10.pgm
+-rw-r--r-- 1 root root 172815 May 24 15:22 o11.pgm
+-rw-r--r-- 1 root root 921616 May 24 15:22 o12.pgm
+-rw-r--r-- 1 root root 206515 May 24 15:22 o13.pgm
+-rw-r--r-- 1 root root 212805 May 24 15:22 o8.pgm
+-rw-r--r-- 1 root root 791136 May 24 15:22 o9.pgm
+
+./filter/test/out/sobel:
+total 2400
+-rw-r--r-- 1 root root 139215 May 24 15:22 o10.pgm
+-rw-r--r-- 1 root root 172815 May 24 15:22 o11.pgm
+-rw-r--r-- 1 root root 921616 May 24 15:22 o12.pgm
+-rw-r--r-- 1 root root 206515 May 24 15:22 o13.pgm
+-rw-r--r-- 1 root root 212805 May 24 15:22 o8.pgm
+-rw-r--r-- 1 root root 791136 May 24 15:22 o9.pgm
+
+./filter_cv:
+total 20
+-rw-r--r-- 1 root root  406 May 24 15:22 durations.ipp
+-rw-r--r-- 1 root root 8892 May 24 15:22 filter_cv.cpp
+-rw-r--r-- 1 root root  617 May 24 15:22 Makefile
+
+./fp:
+total 20
+-rw-r--r-- 1 root root 4161 May 24 15:22 kahan.c
+-rw-r--r-- 1 root root  399 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  332 May 24 15:22 sum.f90
+drwxr-xr-x 3 root root 4096 May 24 15:22 test
+
+./fp/test:
+total 28
+-rw-r--r-- 1 root root 9217 May 24 15:22 data1024.txt
+-rw-r--r-- 1 root root  145 May 24 15:22 data16.txt
+-rw-r--r-- 1 root root  289 May 24 15:22 data32.txt
+-rw-r--r-- 1 root root  577 May 24 15:22 data64.txt
+drwxr-xr-x 2 root root 4096 May 24 15:22 out
+
+./fp/test/out:
+total 44
+-rw-r--r-- 1 root root 6291 May 24 15:22 0f.txt
+-rw-r--r-- 1 root root 6291 May 24 15:22 0.txt
+-rw-r--r-- 1 root root 6291 May 24 15:22 1.txt
+-rw-r--r-- 1 root root 6291 May 24 15:22 2.txt
+-rw-r--r-- 1 root root 6291 May 24 15:22 3.txt
+-rw-r--r-- 1 root root   55 May 24 15:22 sum.txt
+
+./hamming:
+total 12
+-rw-r--r-- 1 root root 3212 May 24 15:22 hamming.c
+-rw-r--r-- 1 root root  156 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  151 May 24 15:22 rdtsc.h
+
+./ikeda:
+total 20
+-rw-r--r-- 1 root root 4119 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root 2046 May 24 15:22 ikeda.c
+-rw-r--r-- 1 root root   83 May 24 15:22 Makefile
+
+./integ:
+total 20
+-rw-r--r-- 1 root root 4238 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root 2333 May 24 15:22 integ.c
+-rw-r--r-- 1 root root   99 May 24 15:22 Makefile
+
+./jacobi:
+total 12
+-rw-r--r-- 1 root root 3579 May 24 15:22 jacobi.c
+-rw-r--r-- 1 root root  126 May 24 15:22 Makefile
+drwxr-xr-x 2 root root 4096 May 24 15:22 test
+
+./jacobi/test:
+total 24
+-rw-r--r-- 1 root root 77 May 24 15:22 A.txt
+-rw-r--r-- 1 root root 22 May 24 15:22 b_A.txt
+-rw-r--r-- 1 root root 10 May 24 15:22 b_B.txt
+-rw-r--r-- 1 root root 20 May 24 15:22 B.txt
+-rw-r--r-- 1 root root 20 May 24 15:22 s_A.txt
+-rw-r--r-- 1 root root 21 May 24 15:22 s_b.txt
+
+./lookup:
+total 16
+-rw-r--r-- 1 root root 3297 May 24 15:22 lookup.c
+-rw-r--r-- 1 root root  112 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  160 May 24 15:22 rdtsc.h
+drwxr-xr-x 2 root root 4096 May 24 15:22 test
+
+./lookup/test:
+total 8508
+-rw-r--r-- 1 root root 8709070 May 24 15:22 big.txt
+
+./m:
+total 16
+drwxr-xr-x 2 root root 4096 May 24 15:22 5.0
+drwxr-xr-x 2 root root 4096 May 24 15:22 5.1
+drwxr-xr-x 2 root root 4096 May 24 15:22 5.2
+drwxr-xr-x 2 root root 4096 May 24 15:22 5.3
+
+./m/5.0:
+total 12
+-rw-r--r-- 1 root root 5214 May 24 15:22 5.0.c
+-rw-r--r-- 1 root root  141 May 24 15:22 Makefile
+
+./m/5.1:
+total 12
+-rw-r--r-- 1 root root 3732 May 24 15:22 5.1.c
+-rw-r--r-- 1 root root  141 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  151 May 24 15:22 rdtsc.h
+
+./m/5.2:
+total 16260
+-rw-r--r-- 1 root root     5132 May 24 15:22 5.2.c
+-rw-r--r-- 1 root root      141 May 24 15:22 Makefile
+-rw-r--r-- 1 root root      151 May 24 15:22 rdtsc.h
+-rw-r--r-- 1 root root 16632023 May 24 15:22 test.tar.gz
+
+./m/5.3:
+total 16
+-rw-r--r-- 1 root root 4834 May 24 15:22 5.3.c
+-rw-r--r-- 1 root root  141 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  151 May 24 15:22 rdtsc.h
+
+./nbody:
+total 12
+-rw-r--r-- 1 root root  331 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 3753 Jul 20 01:40 nbody.c
+-rw-r--r-- 1 root root  139 May 24 15:22 rdtsc.h
+
+./newraph:
+total 8
+-rw-r--r-- 1 root root  153 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 2500 May 24 15:22 newraph.c
+
+./pendulum:
+total 28
+-rw-r--r-- 1 root root 4238 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root   92 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 4895 May 24 15:22 pendulum.c
+-rw-r--r-- 1 root root  104 May 24 15:22 pi.h
+
+./pgm_hist:
+total 12
+-rw-r--r-- 1 root root  130 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 1944 May 24 15:22 pgm_hist.c
+drwxr-xr-x 2 root root 4096 May 24 15:22 pgm_in
+
+./pgm_hist/pgm_in:
+total 12032
+-rw-r--r-- 1 root root  139215 May 24 15:22 10.pgm
+-rw-r--r-- 1 root root  172815 May 24 15:22 11.pgm
+-rw-r--r-- 1 root root  921616 May 24 15:22 12.pgm
+-rw-r--r-- 1 root root  206515 May 24 15:22 13.pgm
+-rw-r--r-- 1 root root  400515 May 24 15:22 1.pgm
+-rw-r--r-- 1 root root  307215 May 24 15:22 2.pgm
+-rw-r--r-- 1 root root 6932077 May 24 15:22 3.pgm
+-rw-r--r-- 1 root root  960016 May 24 15:22 4.pgm
+-rw-r--r-- 1 root root  307215 May 24 15:22 5.pgm
+-rw-r--r-- 1 root root  477615 May 24 15:22 6.pgm
+-rw-r--r-- 1 root root  462585 May 24 15:22 7.pgm
+-rw-r--r-- 1 root root  212805 May 24 15:22 8.pgm
+-rw-r--r-- 1 root root  791136 May 24 15:22 9.pgm
+
+./ppm:
+total 36
+-rw-r--r-- 1 root root  4184 May 24 15:22 flame.c
+-rw-r--r-- 1 root root   832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root    84 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 13548 Jul 24 00:35 ppm.c
+drwxr-xr-x 2 root root  4096 May 24 15:22 ppm_in
+
+./ppm/ppm_in:
+total 43260
+-rw-r--r-- 1 root root   417615 May 24 15:22 10.ppm
+-rw-r--r-- 1 root root   518415 May 24 15:22 11.ppm
+-rw-r--r-- 1 root root  2764816 May 24 15:22 12.ppm
+-rw-r--r-- 1 root root   619515 May 24 15:22 13.ppm
+-rw-r--r-- 1 root root   980115 May 24 15:22 14.ppm
+-rw-r--r-- 1 root root  1201515 May 24 15:22 1.ppm
+-rw-r--r-- 1 root root   602223 May 24 15:22 2.ppm
+-rw-r--r-- 1 root root   547518 May 24 15:22 3.ppm
+-rw-r--r-- 1 root root 20796197 May 24 15:22 4.ppm
+-rw-r--r-- 1 root root  2309361 May 24 15:22 5.ppm
+-rw-r--r-- 1 root root  7680017 May 24 15:22 6.ppm
+-rw-r--r-- 1 root root  2880016 May 24 15:22 7.ppm
+-rw-r--r-- 1 root root   638385 May 24 15:22 8.ppm
+-rw-r--r-- 1 root root  2373376 May 24 15:22 9.ppm
+
+./primes:
+total 12
+-rw-r--r-- 1 root root  131 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 2135 May 24 15:22 primes.c
+-rw-r--r-- 1 root root  153 May 24 15:22 rdtsc.h
+
+./raycast:
+total 28
+-rw-r--r-- 1 root root 4064 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root  105 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  104 May 24 15:22 pi.h
+-rw-r--r-- 1 root root 5315 May 24 15:22 raycast.c
+-rw-r--r-- 1 root root  158 May 24 15:22 rdtsc.h
+
+./rsa:
+total 16
+-rw-r--r-- 1 root root   86 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 4564 May 24 15:22 rsa.c
+drwxr-xr-x 2 root root 4096 May 24 15:22 test
+
+./rsa/test:
+total 8584
+-rw-r--r-- 1 root root 8709070 May 24 15:22 big.txt
+-rw-r--r-- 1 root root      18 May 24 15:22 in.txt
+-rw-r--r-- 1 root root   73000 May 24 15:22 primes_10000.txt
+
+./sqrt:
+total 12
+-rw-r--r-- 1 root root  310 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  326 May 24 15:22 rdtsc.h
+-rw-r--r-- 1 root root 4008 May 24 15:22 sqrt.c
+
+./steer:
+total 36
+-rw-r--r-- 1 root root 4119 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root   83 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  104 May 24 15:22 pi.h
+drwxr-xr-x 2 root root 4096 May 24 15:22 pix
+-rw-r--r-- 1 root root 9662 May 24 15:22 steer.c
+
+./steer/pix:
+total 3820
+-rw-r--r-- 1 root root  598995 May 24 15:22 belt1.ppm
+-rw-r--r-- 1 root root  357615 May 24 15:22 belt2.ppm
+-rw-r--r-- 1 root root  336606 May 24 15:22 belt3.ppm
+-rw-r--r-- 1 root root 1211535 May 24 15:22 home.ppm
+-rw-r--r-- 1 root root  151890 May 24 15:22 moon.ppm
+-rw-r--r-- 1 root root  552795 May 24 15:22 planet.ppm
+-rw-r--r-- 1 root root  120015 May 24 15:22 ufo2.ppm
+-rw-r--r-- 1 root root 1555215 May 24 15:22 ufo3.ppm
+-rw-r--r-- 1 root root  270015 May 24 15:22 ufo.ppm
+
+./stegano:
+total 16
+-rw-r--r-- 1 root root  132 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 5658 May 24 15:22 stegano.c
+drwxr-xr-x 3 root root 4096 May 24 15:22 test
+
+./stegano/test:
+total 8
+-rw-r--r-- 1 root root  128 May 24 15:22 in.txt
+drwxr-xr-x 2 root root 4096 May 24 15:22 ppm_in
+
+./stegano/test/ppm_in:
+total 32376
+-rw-r--r-- 1 root root  1201515 May 24 15:22 1.ppm
+-rw-r--r-- 1 root root   602223 May 24 15:22 2.ppm
+-rw-r--r-- 1 root root   547518 May 24 15:22 3.ppm
+-rw-r--r-- 1 root root 20796197 May 24 15:22 4.ppm
+-rw-r--r-- 1 root root  2309361 May 24 15:22 5.ppm
+-rw-r--r-- 1 root root  7680017 May 24 15:22 6.ppm
+
+./taylor:
+total 24
+-rw-r--r-- 1 root root 4119 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root   86 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 4476 May 24 15:22 taylor.c
+
+./vizfour:
+total 24
+-rw-r--r-- 1 root root 4119 May 24 15:22 flame.c
+-rw-r--r-- 1 root root  832 May 24 15:22 flame.h
+-rw-r--r-- 1 root root   89 May 24 15:22 Makefile
+-rw-r--r-- 1 root root  126 May 24 15:22 pi.h
+-rw-r--r-- 1 root root 2309 May 24 15:22 vizfour.c
+
+./xorencrypt:
+total 12
+-rw-r--r-- 1 root root  141 May 24 15:22 Makefile
+-rw-r--r-- 1 root root 3326 May 24 15:22 xorencrypt.c
+-rw-r--r-- 1 root root  114 May 24 15:22 xorencrypt.h

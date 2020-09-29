@@ -8,7 +8,7 @@
 
 #define G 9.8
 
-#define ORIG_X 800
+#define ORIG_X 400
 #define ORIG_Y 200
 
 //
@@ -109,7 +109,7 @@ void init_double_pend(double_pend_t *p)
   //First section
   p->r1   = 10;
   p->m1   = 200; 
-  p->len1 = 400;
+  p->len1 = 100;
   p->a1 = PI / 4;
 
   p->p1_x = ORIG_X + p->len1 * sin(p->a1);

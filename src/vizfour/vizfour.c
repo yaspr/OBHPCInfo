@@ -93,23 +93,6 @@ int main(int argc, char **argv)
 	}
       else
 	{
-	  for (float a = 0.0; a < rounds * 2 * PI; a += 0.001)
-	    {
-	      x = y = 0.0;
-	      px = py = 0.0;
-	      
-	      //Leave a trail
-	      for (u64 i = 0; i < n; i++)
-	  	{
-		  draw_circle(fo, bx + px + 400, by - (py + 400), r[i], 0, 0, 0);
-		  
-		  draw_circle(fo, bx + x + 400, by - (y + 400), r[i], COLOR_WHITE - (r[i]), COLOR_WHITE - (r[i] * 5), COLOR_WHITE - (r[i] * 3));
-		  
-		  px = x;
-		  py = y;
-		  
-		  x += r[i] * cos(f[i] * a);
-	  	  y += r[i] * sin(f[i] * a);
 		  
 		  usleep(10);
 		}

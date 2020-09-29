@@ -7,8 +7,8 @@
   
   A = L . transpose(L)
 
-  This program implements the Cholesky decomposition and calculates the L matrix.
-  
+  This program implements the Cholesky decomposition and calculates the L matrix.x
+
  */
 #include <math.h>
 #include <stdio.h>

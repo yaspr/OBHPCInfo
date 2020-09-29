@@ -1,13 +1,15 @@
-GCC = gcc
+CC = gcc
 
 CFLAGS = -std=c99 -g3
 
 LFLAGS = -lm
 
-OFLAGS = -O0
+OFLAGS = -O3
 
-all:
-	$(GCC) $(CFLAGS) $(OFLAGS) cholesky.c -o cholesky $(LFLAGS)
+all: cholesky
+
+cholesky: cholesky.c
+	$(CC) $(CFLAGS) $(OFLAGS) $< -o $@ $(LFLAGS)
 
 clean:
 	rm -Rf *~ cholesky

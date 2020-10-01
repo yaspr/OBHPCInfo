@@ -22,7 +22,7 @@ typedef struct pos_tab_s {
   unsigned long long *positions;
 
   //Next table chunk
-  pos_tab_s *next;
+  struct pos_tab_s *next;
   
 } pos_tab_t;
 
@@ -76,7 +76,7 @@ void release_pos_tab(pos_tab_t *pos_tab)
 	  prev->next = NULL;
 
 	  //Zero up the allocated memory
-	  memset(positions, 0, POS_TAB_SIZE);
+	  memset(prev->positions, 0, POS_TAB_SIZE);
 
 	  //Free the allocated positions pointer
 	  free(prev->positions);
@@ -122,6 +122,51 @@ pos_tab_t *extend_pos_tab(pos_tab_t *pos_tab)
 
   //Set n as the last entry of the given list
   p->next = n;
+
+  //Return n
+  return n;
+}
+
+//Return a boolean value (inserted or not inserted)
+unsigned char insert_pos_tab_entry(pos_tab_t *pos_tab, unsigned long long pos)
+{
+  //
+  if (!pos_tab)
+    return 0;
+  
+  //
+  pos_tab_t *p = pos_tab;
+  unsigned char inserted = 0;
+  
+  //
+  while (!inserted && p)
+    {
+      //Check if empty spot 
+      if (p->count < POS_TAB_SIZE)
+	{
+	  //Insert position in table
+	  p->positions[p->count++] = pos;
+	  
+	  //
+	  inserted = 1;
+	}
+      else
+	p = p->next;
+    }
+  
+  //If not inserted
+  if (!inserted)
+    {
+      //
+      pos_tab_t *n = extend_pos_tab(pos_tab);
+      
+      n->positions[n->count++] = pos;
+      
+      inserted = 1;
+    }
+  
+  //
+  return inserted;
 }
 
 //Loads a given file text
@@ -177,11 +222,11 @@ static inline void release_file_text(char *t)
 
 //Lookup string within a given text
 //Return position + 1 when string is found 
-unsigned long long lookup_file_text(const char *s, const char *t)
+pos_tab_t *lookup_file_text(const char *s, const char *t)
 {
   //
   if (!s || !t)
-    return printf("Error: pointers cannot be NULL\n"), 0;
+    return printf("Error: pointers cannot be NULL\n"), NULL;
 
   //
   unsigned char        found = 0;                //Boolean variable
@@ -190,40 +235,41 @@ unsigned long long lookup_file_text(const char *s, const char *t)
   unsigned long long   s_len = strlen(s);
   unsigned long long   t_len = strlen(t);
 
+  //Create first positions table
+  pos_tab_t *pos_tab = create_pos_tab();
+  
   //
-  for (pos = 0; !found && pos < t_len - s_len; pos++)
+  for (pos = 0; pos < t_len - s_len; pos++)
     {
       //
       found = !strncmp(t + pos, s, s_len);
 
       //
       if (found)
-	{
-	  
-	}
+	insert_pos_tab_entry(pos_tab, pos); 
+
+      //
+      count += found;
     }
   
   //
-  return (found) ? pos + 1 : 0;
+  return pos_tab;
 }
 
 //
-void print_file_found(const char *s, const char *t, unsigned long long pos)
+void print_pos_tab(pos_tab_t *pos_tab)
 {
   //
-  if (!s || !t)
-    printf("Error: pointers cannot be NULL\n"), exit(2);
+  pos_tab_t *p = pos_tab;
 
   //
-  for (unsigned long long i = 0; i < pos - 1; i++)
-    putchar(t[i]);
-
-  //
-  printf("\033[1;32m");
-  printf("%s", s);
-  printf("\033[0m");
-  
-  printf("\n");
+  while (p)
+    {
+      for (unsigned long long i = 0; i < p->count; i++)
+	printf("%llu\n", p->positions[i]);
+      
+      p = p->next;
+    }
 }
 
 //Pass a string and a file name
@@ -240,7 +286,12 @@ int main(int argc, char **argv)
   if (t)
     {
       //
-      
+      pos_tab_t *pos_tab = lookup_file_text(argv[1], t);
+
+      if (pos_tab)
+	print_pos_tab(pos_tab);
+      else
+	printf("
       //
       release_file_text(t);
     }

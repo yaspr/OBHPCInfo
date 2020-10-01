@@ -12,12 +12,16 @@
 //
 #define POS_TAB_SIZE 1000
 
-//
+//Positions table
 typedef struct pos_tab_s {
 
+  //Number of array chunk elements
   unsigned long long count;
+
+  //Positions
   unsigned long long *positions;
-  
+
+  //Next table chunk
   pos_tab_s *next;
   
 } pos_tab_t;
@@ -25,13 +29,23 @@ typedef struct pos_tab_s {
 //Allocate memory for the positions table 
 pos_tab_t *create_pos_tab()
 {
-  //
+  //Allocate a positions table
   pos_tab_t *pos_tab = malloc(sizeof(pos_tab_t));
 
+  //Check pointer
+  if (!pos_tab)
+    return NULL;
+  
   //
   pos_tab->count = 0;
+
+  //Allocate positions array 
   pos_tab->positions = aligned_alloc(ALIGN, POS_TAB_SIZE);
 
+  //Check pointer
+  if (!pos_tab->positions)
+    return NULL;
+  
   //
   pos_tab->next = NULL;
   
@@ -39,7 +53,7 @@ pos_tab_t *create_pos_tab()
   return pos_tab;
 }
 
-//
+//Free up linked positions tables 
 void release_pos_tab(pos_tab_t *pos_tab)
 {
   if (!pos_tab)
@@ -52,14 +66,63 @@ void release_pos_tab(pos_tab_t *pos_tab)
       //
       while (curr)
 	{
+	  //Move to the next positions table
 	  curr = curr->next;
+
+	  //Zero up the counter field
+	  prev->count = 0;
+
+	  //Zero up the next pointer
+	  prev->next = NULL;
+
+	  //Zero up the allocated memory
+	  memset(positions, 0, POS_TAB_SIZE);
+
+	  //Free the allocated positions pointer
+	  free(prev->positions);
+
+	  //Free the positions table
 	  free(prev);
+
+	  //Move the previous pointer to current positions table
 	  prev = curr;
 	}
     }
 }
 
-//
+//Create a new positions table and link it to the given one
+pos_tab_t *extend_pos_tab(pos_tab_t *pos_tab)
+{
+  if (!pos_tab)
+    return NULL;
+
+  //
+  pos_tab_t *p = pos_tab;
+
+  //Allocate new positions table
+  pos_tab_t *n = malloc(sizeof(pos_tab_t));
+
+  //Check pointer
+  if (!n)
+    return NULL;
+
+  //
+  n->count = 0;
+
+  //
+  n->positions = aligned_alloc(ALIGN, POS_TAB_SIZE);
+  
+  //Check pointer
+  if (!p->positions)
+    return NULL;
+  
+  //Walk to the last entry of the list
+  while (p->next)
+    p = p->next;
+
+  //Set n as the last entry of the given list
+  p->next = n;
+}
 
 //Loads a given file text
 char *load_file_text(const char *fname)
@@ -67,7 +130,7 @@ char *load_file_text(const char *fname)
   //Check file name pointer
   if (!fname)
     return printf("Error: NULL pointer!\n"), NULL;
-
+  
   //Get file meta information
   struct stat sb;
 
@@ -122,13 +185,24 @@ unsigned long long lookup_file_text(const char *s, const char *t)
 
   //
   unsigned char        found = 0;                //Boolean variable
+  unsigned long long   count = 0;
   unsigned long long     pos = 0;
   unsigned long long   s_len = strlen(s);
   unsigned long long   t_len = strlen(t);
 
+  //
   for (pos = 0; !found && pos < t_len - s_len; pos++)
-    found = !strncmp(t + pos, s, s_len);
+    {
+      //
+      found = !strncmp(t + pos, s, s_len);
 
+      //
+      if (found)
+	{
+	  
+	}
+    }
+  
   //
   return (found) ? pos + 1 : 0;
 }
@@ -166,14 +240,8 @@ int main(int argc, char **argv)
   if (t)
     {
       //
-      unsigned long long pos = lookup_file_text(argv[1], t);
       
       //
-      if (pos)
-	print_file_found(argv[1], t, pos - 1);
-      else
-	printf("Message: cannot find '%s' in file '%s'\n", argv[1], argv[2]);
-      
       release_file_text(t);
     }
   

@@ -60,8 +60,8 @@ void release_pos_tab(pos_tab_t *pos_tab)
     printf("Error: NULL pointer!\n");
   else
     {
-      pos_tab_t *curr = pos_tab->next;
-      pos_tab_t *prev = pos_tab->next;
+      pos_tab_t *curr = pos_tab;
+      pos_tab_t *prev = pos_tab;
       
       //
       while (curr)
@@ -289,9 +289,13 @@ int main(int argc, char **argv)
       pos_tab_t *pos_tab = lookup_file_text(argv[1], t);
 
       if (pos_tab)
-	print_pos_tab(pos_tab);
+	{
+	  print_pos_tab(pos_tab);
+	  release_pos_tab(pos_tab);
+	}
       else
-	printf("
+	printf("BIG OUPS!\n");
+
       //
       release_file_text(t);
     }
